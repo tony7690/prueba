@@ -5,18 +5,25 @@ namespace App\Entity;
 use App\Repository\InmobiliariaRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: InmobiliariaRepository::class)]
+/**
+ * @ORM\Entity(repositoryClass=Inmobiliaria::class)
+ */
 class Inmobiliaria
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column(type: 'integer')]
+    /**
+    * @ORM\Column(name="id", type="integer")
+    * @ORM\Id
+    */
     private $id;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
     private $nombre;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $domicilio;
 
     public function getId(): ?int
